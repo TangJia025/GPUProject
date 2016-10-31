@@ -1,4 +1,11 @@
 simplify the Construction of the data structures in main.cu!
+
 将更新操作中的UpdateFresh, UpdateDelete, UpdateInsert融为一体，函数内线程同步编程全新的UpdateKernel;
-选定100万查询、128*128、0.02查询范围、30个高斯核以及在10个Block时的峰值性能，查询时间高斯25.12s, 均匀分布13.79s;高斯性能为均匀的一半，差异不够明显，接下俩挖掘高斯分布和均匀分布性能差异迥异的配置，在使用Danamic Parallelism优化高斯的性能；
-利用缓冲区cache_query将查询请求分成total 和partial 部分，即QueryKernel --> QueryDispatch + QueryKernel; 下一版本引入Avg平均查找量参数，分别利用virtual warp 和 dynamic parallelism追求 负载均衡；
+
+选定100万查询、128*128、0.02查询范围、30个高斯核以及在10个Block时的峰值性能，查询时间高斯25.12s, 均匀分布13.79s;
+
+高斯性能为均匀的一半，差异不够明显，接下俩挖掘高斯分布和均匀分布性能差异迥异的配置，在使用Danamic Parallelism优化高斯的性能；
+
+利用缓冲区cache_query将查询请求分成total 和partial 部分，即QueryKernel --> QueryDispatch + QueryKernel;
+
+下一版本引入Avg平均查找量参数，分别利用virtual warp 和 dynamic parallelism追求 负载均衡；
