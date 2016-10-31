@@ -1,0 +1,8 @@
+1, Buffer.h 中含有 class Buffer, class UpdateBuffer, class QueryBuffer
+的声明；
+2，BaseStruct.h 中含有 class Point, class UpdateType, class QueryType, class
+ObjBox 的声明；
+3，Bucket.h 中含有class Bucket, class Bktpond 的声明；
+4，Grid.h 中含有 class Cell, class Grid 的声明；
+5，SecIndex.h 中含有class SecIndex, class SIEntry 的声明；
+
